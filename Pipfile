@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+tensorflow = "*"
+scikit-image = "*"
+sklearn = "*"
+matplotlib = "*"
+opencv-python = "*"
+jupyter = "*"
+moviepy = "*"
+requests = "*"
+
+[dev-packages]
+ipython = "*"
+
+[requires]
+python_version = "3.6"
