@@ -22,7 +22,7 @@ def _hog_features(
                     vis=False
                 )
             )
-            _features = np.ravel(_features)
+        _features = np.ravel(_features)
     else:
         _features = hog_features(
             img[:, :, hog_channel], orient,
@@ -83,13 +83,13 @@ def extract_features_for_images(
             img, cspace, spatial_size, hist_bins, orient, pix_per_cell,
             cell_per_block, hog_channel, spatial_feat, hist_feat, hog_feat
         )
-        #
-        # img_flipped_features = extract_features_for_image(
-        #     img_flipped, cspace, spatial_size, hist_bins, orient, pix_per_cell,
-        #     cell_per_block, hog_channel, spatial_feat, hist_feat, hog_feat
-        # )
+
+        img_flipped_features = extract_features_for_image(
+            img_flipped, cspace, spatial_size, hist_bins, orient, pix_per_cell,
+            cell_per_block, hog_channel, spatial_feat, hist_feat, hog_feat
+        )
 
         features.append(img_features)
-        #features.append(img_flipped_features)
+        features.append(img_flipped_features)
 
     return features

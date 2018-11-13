@@ -55,7 +55,7 @@ def search_windows(img, windows, clf, scaler: StandardScaler, cspace='RGB',
     # 1) Create an empty list to receive positive detection windows
     on_windows = []
     # 2) Iterate over all windows in the list
-    for _id, window in enumerate(windows):
+    for window in windows:
         # 3) Extract the test window from original image
         test_img = cv2.resize(img[window[0][1]:window[1][1], window[0][0]:window[1][0]], (64, 64))
         # 4) Extract features for that window using single_img_features()
