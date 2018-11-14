@@ -112,7 +112,16 @@ Here are some examples of processed frame:
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Remove scanning all windows for each frame ( I didn't have tome for optimizing it, but for sure it has a potential ).
+Because we are using processing for each frame, like always with that approach it requires a little specific assumtpions - here it would be the camera angle, size of cars etc, changing each of these parameters would decrease the accurate ( or even brake ) how the processing works.
 
-Also, I splitted my code into standard python modules and jupyter code, to avoid clutter
+Comparing to the approach using NN, here it's more about adjusting the parameters, and I feel that it's harder to get very good results ( with NN it's more about preparing the date, here is preparing and also processing ).
+
+Also, processing in this way it wouldn't be possible with live objects ( on my Mac it took 30 minustes, even with some optimalizations it's hard to belive that we can do it in 1-2 minutes ).
+
+Cases when it doesn't work well:
+
+Because we are using heatmap, the idea doesn't work well for multiple cars, in eg. situation when we'd like to count them, here we'll get the one shape for 2 or more overlapping cars.I guess it might be very hard problem to solve using only the computer vision.
+
+How I could improve the script:
+Remove scanning all windows for each frame ( I didn't have tome for optimizing it, but for sure it has a potential ).
 
